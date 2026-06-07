@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class='col-md-6 mt-5'>
+	<div class='card'>
+		<img src="{{ url_for('static', filename='uploads/' +datas.pimage) }}" height='500px' class='card-img-top'>
+	</div>
+</div>
+<div class='col-md-6 mt-5'>
+	<h3>{{ datas.ptitle }}</h3>
+	<p>{{ datas.pdes }}</p>
+	<p>
+		<b>Published By: </b> <span>{{ datas.name }}</span>
+	</p>
+	<p>{{ datas.pdate }}</p>
+</div>
+{% endblock %}

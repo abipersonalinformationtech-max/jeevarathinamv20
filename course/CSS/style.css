@@ -1,0 +1,14 @@
+#heading{
+
+    font-size: 2rem; /* px,cm,mm,rem */
+    font-family: algerian;
+    font-weight: bold;  /* 100 to 900, bold */
+    font-variant: small-caps; /* normal, small-caps */
+    font-style: italic;
+
+}
+
+#txt{
+    text-align: justify; /* left, right, center, justify */
+    color: #5b6913; /* named color, hex code */
+}

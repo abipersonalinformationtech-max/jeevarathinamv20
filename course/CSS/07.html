@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            ul{
+                /*list-style-type: none;*/ /* none, disc, circle, square, decimal, lower-alpha, upper-alpha, upper-roman, lower-roman */
+                list-style-image: url(images/star.png);
+            }
+
+            .box{
+                height: 200px;
+                width: 200px;
+            }
+
+            #container{
+                display: flex;
+                height: 100%;
+                /*flex-direction: column-reverse;*/ /* row, row-reverse, column, column-reverse */
+                justify-content: space-around; /* start, center, space-between, space-evenly, space-around, end */
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Mango</li>
+            <li>Pineapple</li>
+        </ul>
+
+
+        <div id="container">
+            <div class="box" style="background-color: red;">1</div>
+            <div class="box" style="background-color: rebeccapurple;">2</div>
+            <div class="box" style="background-color: olive;">3</div>
+            <div class="box" style="background-color: orange;">4</div>
+            <!--<div class="box" style="background-color: orchid;">5</div>
+            <div class="box" style="background-color: purple;">6</div>
+            <div class="box" style="background-color: indianred;">7</div>
+            <div class="box" style="background-color: violet;">8</div>
+            <div class="box" style="background-color: peru;">9</div>
+            <div class="box" style="background-color: paleturquoise;">10</div>
+            <div class="box" style="background-color: palegoldenrod;">11</div>
+            <div class="box" style="background-color: paleturquoise;">12</div>-->
+        </div>
+    </body>
+</html>

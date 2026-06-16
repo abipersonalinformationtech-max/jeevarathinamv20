@@ -1,0 +1,7 @@
+insert into (file name)(name,email,mobile,password) values ('thilak','thilak12@gmail.com','9876543201','Thilak123')
+select * from (file name)
+select name,mobile from (file name)
+select * from (file name) where uid='2'
+
+
+

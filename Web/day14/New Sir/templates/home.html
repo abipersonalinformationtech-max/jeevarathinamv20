@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% for row in datas %}
+<div class='col-md-4 mt-5'>
+	<div class='card'>
+		<img src="{{ url_for('static', filename='uploads/' +row.pimage) }}" height='200px' class='card-img-top'>
+		<div class='card-body'>
+			<h3 class='card-title'>{{ row.ptitle }}</h3>
+			<div class='d-flex justify-content-between'>
+				<p>{{ row.pdes }}</p>
+				<p>{{ row.pdate }}</p>
+			</div>
+			<a class='btn btn-primary'>View</a>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}

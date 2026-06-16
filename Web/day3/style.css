@@ -1,0 +1,12 @@
+#demo{
+	font-size:1rem;/* cm, mm, *, px, rem*/
+	font-family:Bookman Old Style;
+	color:#0cdaed;
+	line-height:10mm;
+}													/* Internal style  Id is main */
+#abc{
+	font-size:1rem;/* cm, mm, *, px, rem*/
+	font-family:Algerian;
+	color:#ed0cb1;
+	letter-spacing:5mm;
+}

@@ -1,0 +1,37 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.content{
+    background-color: #3f5c9a;
+    padding:15px 20%;
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+}
+label{
+    font-size: 12px;
+    color: white;
+}
+.label form{
+   display: flex;
+   gap: 15px;
+}
+
+
+.group{
+    display: flex;
+    flex-direction: column;
+}
+.box{
+    background-color: #d2d5e0;
+    display: flex;
+    height: 100vh;
+}
+.left-box{
+    font-size: 25px;
+}

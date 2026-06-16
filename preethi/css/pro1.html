@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+        }
+        .row{
+            display: flex;
+            height: 100%;
+            flex-direction: row; /* row,row-reverse,column,column-reverse */
+            justify-content: space-evenly; /*start,end, center, space-between, space-around, space-evenly*/
+            align-items: center; /* start,end,center,baseline */
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="box" style="background-color: red;">Red</div>
+        <div class="box" style="background-color: green;">Green</div>
+        <div class="box" style="background-color: orange;">Orange</div>
+        <!-- <div class="box" style="background-color: blue;">Blue</div>
+        <div class="box" style="background-color: blueviolet;">Blue Violet</div>
+        <div class="box" style="background-color: pink;">Pink</div>
+        <div class="box" style="background-color: purple;">Purple</div>
+        <div class="box" style="background-color: yellow;">Yellow</div>
+        <div class="box" style="background-color: maroon;">Maroon</div>
+        <div class="box" style="background-color: lightgreen;">Light Green</div> -->
+    </div>
+</body>
+</html>

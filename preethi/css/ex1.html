@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .box{
+            height:500px;
+            width: 400px;
+        }
+        .row{
+            display: flex;
+            height: 100%;
+            flex-direction: row;
+            justify-content: center;  
+            align-items: center;
+        }
+        .s{
+            font-weight: 700;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .form{
+            text-align: center;
+        }
+        .form-control{
+            margin-bottom: 10px;
+            width: 75%;
+            padding: 15px 20px;
+            border-radius: 7px;
+            background-color:#eae4e4;
+            border: none;
+        }
+        .form-btn{
+            margin-bottom: 10px;
+            width: 85%;
+            padding: 25px 20px;
+            border-radius: 7px;
+            font-size: 15px;
+            border: none;
+            color: white;
+            background-color:#059669;
+        }
+        .o{
+            text-align: center;
+            font-size: 18px;
+        }
+        .p{
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            font-weight: 300;
+        }
+        .p1{
+            text-align: center;
+            font-size: 20px;
+            padding: 10px 5px;
+            color: white;
+        }
+        .sub{
+            margin-top: 50px;
+            margin-left: 85px;
+            width: 60%;
+            padding: 20px 20px;
+            border-radius: 40px;
+            font-size: 15px;
+            border: none;
+            background-color: #10b981;
+            color: white;
+        }
+    </style>     
+    </body>
+</head>
+<body>
+    <div class="row">
+         <div class="box" style="background-color:whitesmoke;">
+            <div>
+                <p class="s">Signin<p>
+            </div>
+            <form class="form">
+                <input type="text" placeholder="ByteWebster" class="form-control" required><br>
+                <input type="password" placeholder="..........." class="form-control" required><br>
+                <input type="submit" value="Signin" class="form-btn">
+            </form>
+            <p class="o">or signin with</p>
+            <div class="icon">
+
+            </div>
+         </div>
+        <div class="box" style="background-color:#28c48d;">
+            <p class="p">welcome back!</p>
+            <p class="p1">
+            welcome back! we are so happy to have you here.It`s great to see  you again. We hope you had a safe and enjoyable time away.
+            </p>
+            <input type="submit" value="No account yet? Signup." class="sub">
+        </div>
+    </div> 
+</body>
+</html>

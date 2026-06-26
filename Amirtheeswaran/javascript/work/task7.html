@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task- 7</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 3px solid black;
+        }
+
+        table td,
+        table th {
+            padding: 15px;
+            border: 3px solid black;
+        }
+
+        table tr td input {
+            padding: 10px 15px;
+        }
+        tr th:hover{
+            color: red;
+            background-color: antiquewhite;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" cellpadding="5" cellspacing="15">
+
+        <tr>
+            <th>Remove</th>
+            <th>product</th>
+            <th>price</th>
+            <th>qty</th>
+            <th>total</th>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" onchange="on_change1(this)"></td>
+            <td><input type="text" id="one" disabled></td>
+            <td><input type="number" id="price1" disabled></td>
+            <td><input type="number" id="qty1" disabled onkeyup="row_total1(this)"></td>
+            <td><input type="number" id="tot1" class="total" disabled></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" onchange="on_change2(this)"></td>
+            <td><input type="text" id="two" disabled></td>
+            <td><input type="number" id="price2" disabled></td>
+            <td><input type="number" id="qty2" disabled onkeyup="row_total2(this)"></td>
+            <td><input type="number" id="tot2" class="total"  disabled></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" onchange="on_change3(this)"></td>
+            <td><input type="text" id="three" disabled></td>
+            <td><input type="number" id="price3" disabled></td>
+            <td><input type="number" id="qty3" disabled onkeyup="row_total3(this)"></td>
+            <td><input type="number" id="tot3" class="total"  disabled></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" onchange="on_change4(this)"></td>
+            <td><input type="text" id="four" disabled></td>
+            <td><input type="number" id="price4" disabled></td>
+            <td><input type="number" id="qty4" disabled onkeyup="row_total4(this)"></td>
+            <td><input type="number" id="tot4" class="total"  disabled></td>
+        </tr>
+
+        <tr>
+           <td colspan="4">Total</td>
+           <td><input type="text" id="f_tot"></td>
+        </tr>
+    </table>
+
+    <script>
+        function on_change1(ele) {
+            let cls1 = document.querySelector("#one");
+            if (ele.checked) {
+                one.disabled = false;
+                price1.disabled = false;
+                qty1.disabled = false;
+                tot1.disabled = false;
+
+            } else {
+                one.disabled = true;
+                price1.disabled = true;
+                qty1.disabled = true;
+                tot1.disabled = true;
+                one.value = "";
+                price1.value = "";
+                qty1.value = "";
+                tot1.value = "";
+            }
+        }
+
+        function on_change2(ele) {
+            let cls2 = document.querySelector("#two");
+            if (ele.checked) {
+                two.disabled = false;
+                price2.disabled = false;
+                qty2.disabled = false;
+                tot2.disabled = false;
+
+            } else {
+                two.disabled = true;
+                price2.disabled = true;
+                qty2.disabled = true;
+                tot2.disabled = true;
+                two.value = "";
+                price2.value = "";
+                qty2.value = "";
+                tot2.value = "";
+
+            }
+        }
+
+        function on_change3(ele) {
+            let cls3 = document.querySelector("#three");
+            if (ele.checked) {
+                three.disabled = false;
+                price3.disabled = false;
+                qty3.disabled = false;
+                tot3.disabled = false;
+
+            } else {
+                three.disabled = true;
+                price3.disabled = true;
+                qty3.disabled = true;
+                tot3.disabled = true;
+                three.value = "";
+                price3.value = "";
+                qty3.value = "";
+                tot3.value = "";
+
+
+            }
+        }
+
+        function on_change4(ele) {
+            let cls4 = document.querySelector("#four");
+            if (ele.checked) {
+                four.disabled = false;
+                price4.disabled = false;
+                qty4.disabled = false;
+                tot4.disabled = false;
+
+            } else {
+                four.disabled = true;
+                price4.disabled = true;
+                qty4.disabled = true;
+                tot4.disabled = true;
+                four.value = "";
+                price4.value = "";
+                qty4.value = "";
+                tot4.value = "";
+
+            }
+
+            
+        }
+
+
+        function row_total1(ele) {
+            let current_row = ele.parentElement.parentElement;
+            let qty = current_row.querySelector("#price1").value;
+            let price = current_row.querySelector("#qty1").value;
+
+            let tot = Number(price) * Number(qty);
+            current_row.querySelector("#tot1").value = tot;
+            f_total();
+
+        }
+
+
+        function row_total2(ele) {
+            let current_row = ele.parentElement.parentElement;
+            let qty = current_row.querySelector("#price2").value;
+            let price = current_row.querySelector("#qty2").value;
+
+            let tot = Number(price) * Number(qty);
+            current_row.querySelector("#tot2").value = tot;
+            f_total();
+
+        }
+
+
+        function row_total3(ele) {
+            let current_row = ele.parentElement.parentElement;
+            let qty = current_row.querySelector("#price3").value;
+            let price = current_row.querySelector("#qty3").value;
+
+            let tot = Number(price) * Number(qty);
+            current_row.querySelector("#tot3").value = tot;
+            f_total();
+
+        }
+
+
+        function row_total4(ele) {
+            let current_row = ele.parentElement.parentElement;
+            let qty = current_row.querySelector("#price4").value;
+            let price = current_row.querySelector("#qty4").value;
+
+            let tot = Number(price) * Number(qty);
+            current_row.querySelector("#tot4").value = tot;
+            f_total();
+        }
+
+
+
+        
+        function f_total(){
+            let sum = 0;
+            let totals = document.querySelectorAll(".total");
+            for(i=0;i<totals.length;i++){
+                sum = sum + Number(totals[i].value);
+            }
+            document.querySelector("#f_tot").value = sum;
+        }
+    </script>
+
+
+
+</body>
+
+</html>

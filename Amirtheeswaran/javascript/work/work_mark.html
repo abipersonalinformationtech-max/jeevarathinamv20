@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work_mark_List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="fs-1">
+                    <p class="ms-5 fw-bold text-secondary">Student Mark Sheet</p>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label fs-4 fw-bolder text-danger">Tamil</label>
+                        <input type="number" class="form-control" id="tamil">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-4 fw-bolder text-danger">English</label>
+                        <input type="number" class="form-control" id="english">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-4 fw-bolder text-danger">Maths</label>
+                        <input type="number" class="form-control" id="maths">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-4 fw-bolder text-danger">Science</label>
+                        <input type="number" class="form-control" id="science">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-4 fw-bolder text-danger">Social</label>
+                        <input type="number" class="form-control" id="social">
+                    </div>
+                    <button type="button" class="btn btn-success fw-bold text-light" onclick="display()">Submit</button>
+                </form>
+                <p class="fs-3 fw-bold mt-5 text-light bg-dark" id="output"></p>
+                <p class="fs-5 fw-bold mt3 text-light bg-primary" id="out"></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function display() {
+            let tamil = Number(document.getElementById("tamil").value);
+            let english = Number(document.getElementById("english").value);
+            let maths = Number(document.getElementById("maths").value);
+            let science = Number(document.getElementById("science").value);
+            let social = Number(document.getElementById("social").value);
+            let total = tamil + english + maths + science + social;
+            let average = total / 5;
+            document.getElementById("output").innerHTML = "Total mark is:  " + total;
+            document.getElementById("out").innerHTML = "Average is: " + average;
+        }
+    </script>
+</body>
+
+</html>

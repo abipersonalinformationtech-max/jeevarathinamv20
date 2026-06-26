@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colors</title>
+    <style>
+        .redBox {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 20px;
+
+        }
+
+        .greenBox {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            margin-top: 20px;
+
+        }
+
+        .yBox {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 20px;
+
+        }
+
+        .bBox {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 20px;
+        }
+
+        .pBox {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-top: 20px;
+        }
+
+        .redhide {
+            display: none;
+        }
+
+        .greenhide {
+            display: none;
+        }
+
+        .yhide {
+            display: none;
+        }
+
+        .bhide {
+            display: none;
+        }
+
+        .phide {
+            display: none;
+        }
+        button{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="red()">RED BOX</button>
+    <button onclick="green()">GREEN BOX</button>
+    <button onclick="yellow()">YELLOW</button>
+     <button onclick="blue()">BLUE</button>
+      <button onclick="pink()">PINK</button>
+
+    <div class="redBox redhide">
+    </div>
+
+    <div class="greenBox greenhide">
+    </div>
+
+    <div class="yBox yhide">
+    </div>
+
+    <div class="bBox bhide">
+    </div>
+
+    <div class="pBox phide">
+    </div>
+
+    <script>
+        function red() {
+            let red = document.querySelector(".redBox");
+            if (red.classList.contains("redhide")) {
+                red.classList.remove("redhide");
+            } else {
+                red.classList.add("redhide");
+            }
+        }
+
+        function green() {
+            let green = document.querySelector(".greenBox");
+            if (green.classList.contains("greenhide")) {
+                green.classList.remove("greenhide");
+            } else {
+                green.classList.add("greenhide");
+            }
+        }
+
+        function yellow() {
+            let yellow = document.querySelector(".yBox");
+            if (yellow.classList.contains("yhide")) {
+                yellow.classList.remove("yhide");
+            } else {
+                yellow.classList.add("yhide");
+            }
+        }
+
+          function blue() {
+            let blue = document.querySelector(".bBox");
+            if (blue.classList.contains("bhide")) {
+                blue.classList.remove("bhide");
+            } else {
+                blue.classList.add("bhide");
+            }
+        }
+
+          function pink() {
+            let pink = document.querySelector(".pBox");
+            if (pink.classList.contains("phide")) {
+                pink.classList.remove("phide");
+            } else {
+                pink.classList.add("phide");
+            }
+        }
+    </script>
+</body>
+
+</html>

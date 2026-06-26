@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+
+    <style>
+        .container {
+            width: 300px;
+            position: absolute;
+            left: 500px;
+            top: 50px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px 10px whitesmoke;
+        }
+        .container h2 {
+            padding-left: 105px;
+        }
+
+        .show {
+            display: none;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            padding-left: 30px;
+            font-size: 20px;
+        }
+
+        input {
+            margin-left: 10px;
+        }
+        .container h2 {
+            color: red;
+        }
+
+        #btn {
+            margin-top: 25px;
+            margin-left: 90px;
+        }
+        #x{
+            position: absolute;
+            left: 250px;
+            top: 20px;
+        }
+        #x:hover{
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        p {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn" onclick="display(this)">view</button>
+
+    <div class="container show">
+        <div>
+            <h2>marks...</h2>
+            <button type="submit" id="x" onclick="display()">X</button>
+        </div>
+
+        <label>Tam:<input type="text" id="tam"></label>
+        <label>Eng:<input type="text" id="eng"></label>
+        <label>Mts:<input type="text" id="mts"></label>
+
+        <div>
+            <button value="submit" id="btn" onclick="submit()">SUBMIT</button>
+            <button value="submit" id="close" onclick="display()">CLOSE</button>
+        </div>
+
+        <p id="out"></p>
+    </div>
+
+    <script>
+        function display(ele) {
+            let cls = document.querySelector(".container");
+            if (cls.classList.contains('show')) {
+                cls.classList.remove('show');
+                ele.innerText = 'Hide';
+            } else {
+                cls.classList.add('show');
+                ele.innerText = 'Show';
+            }
+        }
+
+        function submit() {
+            let tamil = Number(document.getElementById("tam").value);
+            let english = Number(document.getElementById("eng").value);
+            let maths = Number(document.getElementById("mts").value);
+
+            let tot = tamil + english + maths;
+            document.getElementById("out").innerHTML = "The total is:  " + tot;
+        }
+    </script>
+</body>
+
+</html>

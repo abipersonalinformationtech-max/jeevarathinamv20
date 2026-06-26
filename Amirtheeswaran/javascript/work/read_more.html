@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read_more...</title>
+
+    <style>
+        .show_txt {
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 400px;">
+        <p class="read_more show_txt">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Cupiditate, deserunt corporis ab quae temporibus molestiae
+            eaque repudiandae labore, suscipit eius, nobis qui. Cum ducimus
+            molestiae nisi dolorem odio voluptate corrupti.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Cupiditate, deserunt corporis ab quae temporibus molestiae
+            eaque repudiandae labore, suscipit eius, nobis qui. Cum ducimus
+            molestiae nisi dolorem odio voluptate corrupti.
+
+        </p>
+
+        <a href="#" onclick = display(this,event)>Read more..</a>
+    </div>
+
+    <script>
+        function display(ele,event){
+            event.preventDefault();
+            
+            let txt = document.querySelector(".read_more");
+            txt.classList.toggle("show_txt");
+
+
+            if(txt.classList.contains("show_txt")){
+                ele.innerText = "Read more...";
+            }else{
+                ele.innerText = "Read less";
+            }
+        }
+    </script>
+</body>
+
+</html>

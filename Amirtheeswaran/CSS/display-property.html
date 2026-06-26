@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Display Properties</title>
+		<style>
+			.inline{
+				background:red;
+				padding:5px;
+				display:inline; /* cannot be set height/width */
+			}
+			.block{
+				background:green; /* it takes full width and can we set height/width */
+				height:150px;
+			}
+			.inline-block{
+				background:yellow;
+				display:inline-block; /* behaves like inline but we can set height/width like block */
+				height:50px;
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<span class='inline'>Apple</span>
+		<span class='inline'>Orange</span>
+		<span class='inline'>Mango</span>
+		
+		<div class='block'>Welcome</div>
+		<div class='block'>Welcome</div>
+		<div class='block'>Welcome</div>
+		
+		<span class='inline-block'>Apple</span>
+		<span class='inline-block'>Orange</span>
+		<span class='inline-block'>Mango</span>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name : "siva",
+            tamil: 120,
+            english: 30,
+            maths: 30,
+            total: function(){
+                return this.tamil + this.english + this.maths;
+            },
+
+            result: function(){
+                if(this.tamil >35 && this.english && this.maths){
+                    return "pass";
+                }else{
+                    return "fail";
+                }
+            }
+
+        };
+        console.log(student.name);
+        console.log(student.total());
+        console.log(student.result());
+    </script>
+</body>
+</html>

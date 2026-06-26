@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            margin-top: 25px;
+            padding: 15px;
+            height: 150px;
+            width: 150px;
+            border-radius: 5px;
+            background-color: wheat;
+        }
+        .menu a{
+            text-decoration: none;
+            display: block;
+            padding-top: 15px;
+            padding-left: 23px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .view{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="button" value="Show" onclick="display(this)">
+    <div class="menu view">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <script>
+        function display(element){
+            let cls = document.querySelector(".menu");
+            if(cls.classList.contains("view")){
+                cls.classList.remove("view");
+                element.value="hide";
+            }else{
+                cls.classList.add("view");
+                element.value="Show";
+            }
+        }
+    </script>
+</body>
+</html>

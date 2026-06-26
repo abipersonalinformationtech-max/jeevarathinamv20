@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-5</title>
+
+    <style>
+        .container {
+            width: 500px;
+            border-radius: 5px;
+            background-color: antiquewhite;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 23px;
+            font-weight: bold;
+            padding: 18px;
+        }
+
+        .box {
+            margin-left: 400px;
+            margin-top: 100px;
+        }
+
+        .navbar-menu {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.7rem;
+            position: absolute;
+            height: 74vh;
+            width: 250px;
+            top: 0;
+            left: 0;
+            padding: 5rem 1.5rem;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 0px;
+            background-color: black;
+            transition: 0.7 ease;
+            display: none;
+        }
+
+        .navbar-menu li {
+            line-height: 20px;
+            padding-left: 40px;
+            font-size: 25px;
+        }
+
+        a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+        a:hover{
+            color: red;
+            background-color: beige;
+            border-radius: 5px;
+            transition: 0.2s;
+            padding: 3px 4px;
+        }
+
+        #h-btn {
+            position: relative;
+            left: 235px;
+            bottom: 60px;
+            color: brown;
+        }
+        #h-btn:hover{
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="toggle" onclick="display()">menu</button>
+
+    <div class="box">
+        <h2> Background Colours</h2>
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+            </p>
+        </div>
+        <div>
+            <button type="button" style="background-color: red; color: red;" onclick="red()">show red</button>
+            <button type="button" style="background-color: green; color: green;" onclick="green()">show green</button>
+            <button type="button" style="background-color: yellow; color: yellow;" onclick="yellow()">show
+                yellow</button>
+            <button type="button" style="background-color: pink; color: pink;" onclick="pink()">show pink</button>
+            <button type="button" style="background-color: orange; color: orange;" onclick="orange()">show
+                orange</button>
+            <button type="button" style="background-color: blue; color: blue;" onclick="blue()">show blue</button>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-menu">
+                <button id="h-btn" onclick="hide()">X</button>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">CART</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        function display() {
+            document.querySelector(".navbar-menu").style.display = "flex";
+        }
+
+        function hide() {
+            document.querySelector(".navbar-menu").style.display = "";
+        }
+
+
+        function red() {
+            document.querySelector(".container").style.background = "red";
+        }
+
+        function green() {
+            document.querySelector(".container").style.background = "green";
+        }
+
+        function yellow() {
+            document.querySelector(".container").style.background = "yellow";
+        }
+
+        function pink() {
+            document.querySelector(".container").style.background = "pink";
+        }
+
+        function orange() {
+            document.querySelector(".container").style.background = "orange";
+        }
+
+        function blue() {
+            document.querySelector(".container").style.background = "blue";
+        }
+    </script>
+</body>
+
+</html>

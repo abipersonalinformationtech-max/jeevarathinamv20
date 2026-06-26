@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work</title>
+</head>
+<style>
+    .div{
+        height: 160px;
+        width: 200px;
+        background-color: wheat;
+        border-radius: 25px;
+        padding-right: 10px;
+        padding-top: 35px;
+        margin-left: 30px;
+    }
+    .div a{
+        text-decoration: none;
+        display: block;
+        font-size: 25px;
+        line-height: 35px;
+        color: red;
+        text-align: center;
+        
+    }
+    .hide{
+        display: none;
+    }
+</style>
+<body>
+    <input type="button" value="show" onclick="display(this)">
+    <input type="button" value="show" onclick="display(this)">
+    <div class="div hide">
+        <a href="#">Home</a>
+        <a href="#">page</a>
+        <a href="#">contact</a>
+    </div>
+
+
+
+    <script>
+        function display(element){
+        let cls = document.querySelector(".div");
+        if(cls.classList.contains("hide")){
+            cls.classList.remove("hide");
+            element.value="Hide";
+        }else{
+            cls.classList.add("hide");
+            element.value="Show";
+        }
+       
+    }
+    </script>
+
+    
+</body>
+</html>

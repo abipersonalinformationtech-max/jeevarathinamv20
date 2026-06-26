@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: absolute;
+            width:100%;
+            height:100vh;
+            background:rgba(212, 214, 213,0.9);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            display:none;
+        }
+        .modal{
+            width:200px;
+            height:200px;
+            background:white;
+            box-shadow:2px 2px 8px 10px grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="modal">
+            <div>
+                <label>Name</label>
+                <input type="text">
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password">
+            </div>
+            <input type="button" value="Submit">
+            <input type="button" value="Close" onclick="close_modal()">
+        </div>
+    </div>
+    <input type="button" value="Open Modal" onclick="view_modal()">
+
+    <script>
+        function view_modal(){
+            document.querySelector(".box").style.display="flex";
+        }
+        function close_modal(){
+            document.querySelector(".box").style.display="";
+        }
+    </script>
+</body>
+</html>

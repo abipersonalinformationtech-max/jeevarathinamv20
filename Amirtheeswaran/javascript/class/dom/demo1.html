@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="fs-2">
+                    <p class="text-danger fw-bolder mt-4 text-center">Student subject mark</p>
+                </div>
+
+                <div class="mb-3 fw-bold text-primary">
+                        <label class="form-label">MECH</label>
+                        <input type="number" class="form-control" id="mech">
+                    </div>
+
+                     <div class="mb-3 fw-bold text-primary">
+                        <label class="form-label">POM</label>
+                        <input type="number" class="form-control" id="pom">
+                    </div>
+
+                     <div class="mb-3 fw-bold text-primary">
+                        <label class="form-label">ITAS</label>
+                        <input type="number" class="form-control" id="itas">
+                    </div>
+
+                     <div class="mb-3 fw-bold text-primary">
+                        <label class="form-label">MS</label>
+                        <input type="number" class="form-control" id="ms">
+                    </div>
+
+                     <div class="mb-3 fw-bold text-primary">
+                        <label class="form-label">HVE</label>
+                        <input type="text" class="form-control" id="hve">
+                    </div>
+
+                    
+                        <input type="submit" value="submit" class="bg-success text-light fw-bold" onclick="display()">
+                    
+            </div>
+        </div>
+        <div>
+            <p id="output"></p>
+        </div>
+    </div>
+
+
+
+    <script>
+        
+        function display(){
+            let mech = Number (document.getElementById("mech").value);
+            let pom  = Number (document.getElementById("pom").value);
+            let itas = Number (document.getElementById("itas").value);
+            let ms   = Number (document.getElementById("ms").value);
+            let hve  = Number (document.getElementById("hve").value);
+            let tot  = mech + pom + itas + ms + hve;
+
+            document.getElementById("output").innerHTML = "The total is: "+tot;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-4</title>
+
+    <style>
+        .container {
+            width: 500px;
+            border-radius: 5px;
+            background-color: antiquewhite;
+        }
+        p{
+            font-size: 17px;
+            line-height: 23px;
+            font-weight: bold;
+            padding: 18px;
+        }
+        .box{
+            margin-left: 400px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <h2> Background Colours</h2>
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Id, blanditiis? Laboriosam reiciendis aut natus! Vitae est
+                numquam ut facilis nulla minima architecto, quis asperiores nihil,
+                ipsum itaque, accusamus mollitia! Rem.            
+            </p>
+        </div>
+
+        <div>
+            <button type="button" style="background-color: red; color: red;" onclick="red()">show red</button>
+            <button type="button" style="background-color: green; color: green;" onclick="green()">show green</button>
+            <button type="button" style="background-color: yellow; color: yellow;" onclick="yellow()">show yellow</button>
+            <button type="button" style="background-color: pink; color: pink;" onclick="pink()">show pink</button>
+            <button type="button" style="background-color: orange; color: orange;" onclick="orange()">show orange</button>
+            <button type="button" style="background-color: blue; color: blue;" onclick="blue()">show blue</button>
+        </div>
+    </div>
+
+    <script>
+        function red() {
+            document.querySelector(".container").style.background = "red";
+        }
+
+        function green() {
+            document.querySelector(".container").style.background = "green";
+        }
+
+        function yellow() {
+            document.querySelector(".container").style.background = "yellow";
+        }
+
+        function pink() {
+            document.querySelector(".container").style.background = "pink";
+        }
+
+        function orange() {
+            document.querySelector(".container").style.background = "orange";
+        }
+
+        function blue() {
+            document.querySelector(".container").style.background = "blue";
+        }
+    </script>
+</body>
+
+</html>

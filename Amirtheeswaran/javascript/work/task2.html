@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-2</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width:100%;
+            height:100vh;
+            background:rgba(212, 214, 213,0.9);
+            justify-content:center;
+            align-items:center;
+            display:none;
+        }
+        .modal{
+            width:300px;
+            height:200px;
+            background:white;
+            box-shadow:2px 2px 8px 10px grey;
+            border-radius: 5px;
+        }
+        h2{
+            padding-left: 95px;
+        }
+        .lbl{
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+        .input{
+            margin-bottom: 15px;
+            margin-left: 30px;
+        }
+        .input2{
+            margin-left: 7px;
+        }
+        #btn1{
+            margin-top: 30px;
+            margin-left: 80px;
+        }
+        #btn2{
+        
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="modal">
+            <div>
+                <h2>login form</h2>
+                <label class="lbl">Name:</label>
+                <input type="text" class="input">
+            </div>
+            <div>
+                <label class="lbl">Password:</label>
+                <input type="password" class="input2">
+            </div>
+            <input type="button" value="Submit" id="btn1">
+            <input type="button" value="Close" id="btn2" onclick="close_modal()">
+        </div>
+    </div>
+    <input type="button" value="Open Modal" onclick="view_modal()">
+
+    <script>
+        function view_modal(){
+            document.querySelector(".box").style.display="flex";
+        }
+        function close_modal(){
+            document.querySelector(".box").style.display="";
+        }
+    </script>
+</body>
+</html>

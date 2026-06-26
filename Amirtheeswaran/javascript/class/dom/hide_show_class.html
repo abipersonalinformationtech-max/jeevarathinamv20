@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add_remove_class</title>
+    <style>
+      .menu{
+        padding:10px;
+        width:100px;
+        border:1px solid #ccc;
+        margin-top:10px;
+      }
+      .menu a{
+        display:block;
+        margin-bottom:10px;
+      }  
+      .hide{
+        display:none;
+      }
+    </style>
+</head>
+<body>
+    <input type="button" value="Show" onclick="display_items(this)">
+    <div class="menu hide">
+      <a href="">Home</a>
+      <a href="">Shop</a>
+      <a href="">Contact Us</a>
+      <a href="">About Us</a>
+    </div>
+    <script>
+      function display_items(ele){
+        let cls = document.querySelector(".menu");
+        if(cls.classList.contains("hide")){
+          cls.classList.remove("hide");
+          ele.value="Hide";
+        }else{
+          cls.classList.add("hide");
+          ele.value="Show";
+        }
+      }
+    </script>
+</body>
+</html>

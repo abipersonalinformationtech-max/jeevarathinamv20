@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <table class="table table-bordered table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="chk1" onchange="state(1)"></td>
+                            <td>Tea</td>
+                            <td><input type="text" id="price1" value="12"  class="form-control" disabled></td>
+                            <td><input type="text" id="qty1" class="form-control" onkeyup="row_total(1)" disabled></td>
+                            <td><input type="text" id="tot1" class="form-control" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk2" onchange="state(2)"></td>
+                            <td>Coffee</td>
+                            <td><input type="text" id="price2" value="10"  class="form-control" disabled></td>
+                            <td><input type="text" id="qty2" class="form-control" onkeyup="row_total(2)" disabled></td>
+                            <td><input type="text" id="tot2" class="form-control" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk3" onchange="state(3)"></td>
+                            <td>Black Tea</td>
+                            <td><input type="text" id="price3" value="35"  class="form-control" disabled></td>
+                            <td><input type="text" id="qty3" class="form-control" onkeyup="row_total(3)" disabled></td>
+                            <td><input type="text" id="tot3" class="form-control" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk4" onchange="state(4)"></td>
+                            <td>Horlicks</td>
+                            <td><input type="text" id="price4" value="15"  class="form-control" disabled></td>
+                            <td><input type="text" id="qty4" class="form-control" onkeyup="row_total(4)" disabled></td>
+                            <td><input type="text" id="tot4" class="form-control" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk5" onchange="state(5)"></td>
+                            <td>Boost</td>
+                            <td><input type="text" id="price5" value="25" class="form-control" disabled></td>
+                            <td><input type="text" id="qty5" class="form-control" onkeyup="row_total(5)" disabled></td>
+                            <td><input type="text" id="tot5" class="form-control" disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function state(i){
+            let type = document.getElementById("chk"+i).checked;
+            if(type == true){
+                document.getElementById("price"+i).disabled = false;
+                document.getElementById("qty"+i).disabled = false;
+                document.getElementById("tot"+i).disabled = false;
+            }else{
+                document.getElementById("price"+i).disabled = true;
+                document.getElementById("qty"+i).disabled = true;
+                document.getElementById("tot"+i).disabled = true;
+                 document.getElementById("price"+i).value = "";
+                document.getElementById("qty"+i).value = "";
+                document.getElementById("tot"+i).value = "";
+            }
+        }
+
+        function row_total(i){
+            let price = Number(document.querySelector("#price"+i).value);
+            let qty = Number(document.querySelector("#qty"+i).value);
+            let total = price * qty;
+            document.querySelector("#tot"+i).value = total;
+        }
+    </script>
+</body>
+</html>

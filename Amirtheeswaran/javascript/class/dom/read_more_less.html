@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More Less Text</title>
+    <style>
+        .show_text{
+            display: -webkit-box;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; 
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 500px;">
+        <p class='read_more_text show_text'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio placeat voluptate error consectetur eaque quis omnis magnam, nobis excepturi quidem voluptatum suscipit libero nisi sapiente animi maxime? Autem, odio quod?. I always fancy I see people walking in these numerous paths and arbors, but John has cautioned me not to give way to fancy in the least. He says that with my imaginative power and habit of story-making a nervous weakness like mine is sure to lead to all manner of excited fancies and that I ought to use my will and good sense to check the tendency.
+        </p>
+        <a href='#' onclick="read_more(this,event)">Read More</a>
+    </div>
+    <script>
+        function read_more(ele,e){
+            e.preventDefault();
+            let txt = document.querySelector(".read_more_text");
+            txt.classList.toggle("show_text");
+
+            if(txt.classList.contains("show_text")){
+                ele.innerText = "Read More";
+            }else{
+                ele.innerText = "Read Less";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lay's Cart with Quantity</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+  background: #f8f9fa;
+}
+
+.card-box {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}
+
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.qty-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: #ffc107;
+  font-weight: bold;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card-box">
+
+  <!-- IMAGE -->
+  <img id="productImage" src="lays300.jpg" class="product-img">
+
+  <!-- DETAILS -->
+  <h4 id="gramText">200 g</h4>
+  <div class="price">₹<span id="priceText">20</span></div>
+
+  <!-- VARIANTS -->
+  <div class="mt-3">
+    <button class="btn btn-warning m-1" onclick="selectVariant('100 g',15,'lays100.jpg')">100g</button>
+    <button class="btn btn-warning m-1" onclick="selectVariant('250 g',20,'lays200.jpg')">250g</button>
+    <button class="btn btn-warning m-1" onclick="selectVariant('300 g',30,'300lays.jpg')">300g</button>
+  </div>
+
+  <!-- QUANTITY -->
+  <div class="qty-box">
+    <button class="qty-btn" onclick="changeQty(-1)">-</button>
+    <span id="qty">1</span>
+    <button class="qty-btn" onclick="changeQty(1)">+</button>
+  </div>
+
+  <!-- ADD BUTTON -->
+  <div class="mt-3">
+    <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <hr>
+
+  <!-- CART -->
+  <ul id="cartList" class="list-group"></ul>
+
+  <h4 class="mt-3">
+    Total: ₹<span id="totalPrice">0</span>
+  </h4>
+
+</div>
+
+<script>
+
+let currentName = "200 g";
+let currentPrice = 20;
+let qty = 1;
+let total = 0;
+
+// variant change
+function selectVariant(name, price, image) {
+  currentName = name;
+  currentPrice = price;
+
+  document.getElementById("gramText").innerText = name;
+  document.getElementById("priceText").innerText = price;
+  document.getElementById("productImage").src = image;
+}
+
+// quantity change
+function changeQty(value) {
+  qty += value;
+  if (qty < 1) qty = 1;
+
+  document.getElementById("qty").innerText = qty;
+}
+
+// add to cart
+function addToCart() {
+
+  let itemTotal = currentPrice * qty;
+  total += itemTotal;
+
+  let li = document.createElement("li");
+  li.className = "list-group-item";
+  li.innerText = currentName + " x " + qty + " = ₹" + itemTotal;
+
+  document.getElementById("cartList").appendChild(li);
+
+  document.getElementById("totalPrice").innerText = total;
+
+  // reset qty
+  qty = 1;
+  document.getElementById("qty").innerText = qty;
+}
+
+</script>
+
+</body>
+</html>

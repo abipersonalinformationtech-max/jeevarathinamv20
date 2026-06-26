@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lay's Shop Checkout</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body {
+  background: linear-gradient(135deg, white, #ccc);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* MAIN CARD */
+.main-card {
+  max-width: 520px;
+  margin: auto;
+  margin-top: 30px;
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  backdrop-filter: blur(5px);
+}
+
+/* IMAGE */
+.product-img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.05);
+}
+
+/* PRICE */
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1b8a3b;
+}
+
+/* QTY */
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.qty-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: linear-gradient(135deg, #ffd43b, #ff922b);
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  transform: scale(1.1);
+}
+
+/* VARIANT BUTTONS */
+.btn-secondary {
+  background: linear-gradient(135deg, #4dabf7, #228be6);
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #228be6, #1864ab);
+  transform: scale(1.05);
+}
+
+/* ADD BUTTON */
+.btn-secondary.w-100 {
+  background: linear-gradient(135deg, #51cf66, #2f9e44);
+}
+
+.btn-secondary.w-100:hover {
+  background: linear-gradient(135deg, #2f9e44, #2b8a3e);
+}
+
+/* TOTAL */
+.total-box {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #222;
+}
+
+/* SUBMIT */
+.submit-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #845ef7, #5f3dc4);
+  border: none;
+}
+
+.submit-btn:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #5f3dc4, #3b5bdb);
+}
+
+/* CART ITEM */
+.list-group-item {
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="main-card">
+
+      <h3 class="text-center mb-3">Lay's Online Store</h3>
+
+      <!-- IMAGE -->
+      <img id="productImage" src="lays300.jpg" class="product-img">
+
+      <!-- NAME + PRICE -->
+      <h4 id="gramText" class="mt-2 text-center">200 g</h4>
+      <div class="price text-center">₹<span id="priceText">20</span></div>
+
+      <!-- VARIANTS -->
+      <div class="text-center mt-3">
+        <button class="btn btn-secondary m-1" onclick="selectVariant('100 g',15,'lays100.jpg')">100g</button>
+        <button class="btn btn-secondary m-1" onclick="selectVariant('250 g',20,'lays200.jpg')">250g</button>
+        <button class="btn btn-secondary m-1" onclick="selectVariant('300 g',30,'300lays.jpg')">300g</button>
+      </div>
+
+      <!-- QUANTITY -->
+      <div class="qty-box mt-3">
+        <button class="qty-btn" onclick="changeQty(-1)">-</button>
+        <span id="qty" class="fs-5">1</span>
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+
+      <!-- ADD BUTTON -->
+      <div class="mt-3">
+        <button class="btn btn-secondary w-100" onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <hr>
+
+      <!-- CART -->
+      <ul id="cartList" class="list-group"></ul>
+
+      <!-- TOTAL -->
+      <div class="total-box text-center mt-3">
+        Total: ₹<span id="totalPrice">0</span>
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+      <button class="btn btn-success submit-btn" onclick="submitOrder()">
+        Submit Order
+      </button>
+
+    </div>
+
+<script>
+
+let currentName = "200 g";
+let currentPrice = 20;
+let qty = 1;
+let total = 0;
+
+// variant
+function selectVariant(name, price, image) {
+  currentName = name;
+  currentPrice = price;
+
+  document.getElementById("gramText").innerText = name;
+  document.getElementById("priceText").innerText = price;
+  document.getElementById("productImage").src = image;
+}
+
+// qty
+function changeQty(value) {
+  qty += value;
+  if (qty < 1) qty = 1;
+  document.getElementById("qty").innerText = qty;
+}
+
+// cart
+function addToCart() {
+
+  let itemTotal = currentPrice * qty;
+  total += itemTotal;
+
+  let li = document.createElement("li");
+  li.className = "list-group-item";
+  li.innerText = currentName + " x " + qty + " = ₹" + itemTotal;
+
+  document.getElementById("cartList").appendChild(li);
+
+  document.getElementById("totalPrice").innerText = total;
+
+  qty = 1;
+  document.getElementById("qty").innerText = qty;
+}
+
+// submit order
+function submitOrder() {
+  if (total === 0) {
+    alert("Cart empty! Add items first.");
+  } else {
+    alert("Order Submitted Successfully! Total ₹" + total);
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lay's Variant Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .box {
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+    }
+
+    img {
+      width: 220px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #ffcc00;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ffb700;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <!-- Fixed Image -->
+  <img src="notepad/lays100.jpg" alt="Lay's Chips">
+
+  <!-- Variant Text -->
+  <h2 id="gramText">200 g</h2>
+
+ 
+
+  <!-- Buttons -->
+  <button onclick="changeVariant('200 g', '₹20')">200 g</button>
+  <button onclick="changeVariant('250 g', '₹30')">250 g</button>
+
+   <!-- Optional Price -->
+  <h3 id="priceText">₹20</h3>
+
+</div>
+
+<script>
+function changeVariant(gram, price) {
+  document.getElementById("gramText").innerText = gram;
+  document.getElementById("priceText").innerText = price;
+}
+</script>
+
+</body>
+</html>

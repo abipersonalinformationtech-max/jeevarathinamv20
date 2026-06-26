@@ -1,0 +1,7 @@
+django.contrib.messages. constants as message
+
+    messages.DEBUG:'secondary',
+    messages.INFO:'info',
+    messages.SUCCESS:'success',
+    messages.WARNING:'warning',
+    messages.DANGER:'danger'

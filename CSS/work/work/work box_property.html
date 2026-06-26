@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<title>Box Properties work</title>
+		<style>
+			body{
+				background-image:url(flower.jpg);
+				font-family:arial;
+			}
+			
+			.div{
+				color:white;
+			}
+			  
+			#box{
+				height:100px;
+				width:100px;
+				background-image:url(2.jpg);
+				background-size:200px;
+				background-repeat:no-repeat;
+				float:right;
+				clear:left;
+				color:white;
+			}
+			#box1{
+				height:100px;
+				width:100px;
+				background-image:url(1.png);
+				background-size:200px;
+				background-repeat:no-repeat;
+				color:white;
+				margin-bottom:50px;
+			}
+			#box2{
+				height:200px;
+				width:200px;
+				background:violet;
+				float:right; 
+			}
+			#box3{
+				height:200px;
+				width:200px;
+				background:orange;
+			}
+			.square{
+				height:200px;
+				width:200px;
+				background:red;
+				margin:15px 50px; 
+				margin:0px 10px 0px 10px; 
+				padding:15px 50px; 
+				margin:5px 10px 15px 10px;
+				float:right;
+			.design{
+				height:auto;
+				width:150px;
+				background:orange;
+				padding:10px 15px;
+				box-sizing:border-box; 
+			}
+			.content{
+				height:50px;
+				width:50px;
+				background:black;
+				float:left;
+			}
+			.para{
+				clear:right; 
+			}
+			p{
+			  color:white;
+			}
+			#style{
+				color:white;
+				font-family:arial;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='div'>
+			<!-- Inside div tag we give any tag like p,h1 to h6, img, a etc... -->
+			<p id='p'>Welcome to World<br>
+			Welcome to <span>World</span><br>
+			Welcome to World<br>
+			Welcome to World<br></p>
+		</div>
+		
+		<span id='style'>
+			Hello world hi hello ram are you doing
+		</span>		
+		
+		<div id='box'>
+			Welcome Ram On the Insert tab, the galleries include 
+		</div>
+		
+		<div id='box1'>
+			Welcome Ram On the Insert tab, the galleries include 
+		</div>
+		
+		<div id='box2'>
+			Welcome Ram On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document.<hr color=yellow> good morning
+		</div>
+		<div id='box3'>
+			Welcome Ram On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks.<hr color=blue> 
+		</div>
+			Welcome Ram
+			
+		<div class='square'>
+			Lorem ipsum content On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. 
+		</div>	
+			
+		<div class='design'>
+			On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. 
+		</div><br>
+		
+		<div class='content'></div> <!-- takes width 100% -->
+		<p class='para'>On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks.</p>
+			
+	</body>
+</html>

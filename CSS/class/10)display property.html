@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			.inline{
+				display:inline;
+				background:red;
+				padding:5px;
+				width:50%; /* cannot be set height/width eg:navbar */ 
+			}
+			.block{
+				display:block;
+				background:green;
+				margin-top:10px;
+				width:50%; /* can be set height/width eg: tags:h1 to h5, p etc., it cannot display in side*/
+			}
+			.inline-block{
+				margin-top:10px;
+				background:blue;
+				display:inline-block;
+				border-radius:5px;
+				color:white;
+				width:150px; /* behaves like inline but we can set height/width like block */
+			}
+		</style>
+	</head>
+	<body>
+		<span class='inline'>Inline 1</span>
+		<span class='inline'>Inline 2</span>
+		<span class='inline'>Inline 2</span>
+		
+		<div class='block'>Block 1</div>
+		<div class='block'>Block 2</div>
+		<div class='block'>Block 2</div>
+		
+		<div class='inline-block'>Inline Block 1</div>
+		<div class='inline-block'>Inline Block 2</div>
+		<div class='inline-block'>Inline Block 2</div>
+		
+	</body>
+</html>

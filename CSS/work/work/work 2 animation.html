@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>animation</title>
+	</head>
+		<style>
+			body{
+				background-color:orange;
+			}
+			.box{
+				height:150px;
+				width:150px;
+				background-color:red;
+				border-radius:10px;
+				position:absolute;
+				animation-name:trisphan;
+				animation-duration:4s;
+			}
+			@keyframes trisphan{
+				0% { background-color:green; }
+				25% { background-color:red; }
+				50% { background-color:yellow; }
+				100% { background-color:blue; }
+			}
+		</style>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

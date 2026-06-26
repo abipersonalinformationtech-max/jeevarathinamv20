@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Simple Dropdown Menu</title>
+    <style>
+       .dropdown{
+			display: inline-block;
+			width:auto;
+			position:relative;
+		}
+		.btn{
+			padding:5px 10px;
+			border:none;
+			border:1px solid #4271df;
+			background:#4271df;
+			color:white;
+			font-weight:800;
+			border-radius:5px;
+		 }
+		 ul{
+			margin:0;
+			width:100%;
+			list-style:none;
+			padding:12px 20px;
+			box-shadow:2px 2px 3px 2px #ccc;
+			border-radius:2px;
+			display:none;
+			position:absolute;
+			background:red;
+		  }
+		  .dropdown:hover ul{
+			display:block;
+		  }
+		  a{
+			text-decoration:none;
+		  }
+    </style>
+  </head>
+  <body>
+    <div class='dropdown'>
+      <input type='button' class='btn' value='Dropdown'>
+      <ul>
+        <li><a href='#'>Home</a></li>
+        <li><a href='#'>Shop</a></li>
+        <li><a href='#'>About Us</a></li>
+        <li><a href='#'>Contact Us</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

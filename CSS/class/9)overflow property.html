@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>OverFlow</title>
+		<style>
+			div{
+				height:100px;
+				width:150px;
+				overflow:scroll; /* auto, hidden, visible, scroll */
+			}
+			#text{
+				height:90px;
+				width:150px;
+				display:-webkit-box;
+				-webkit-box-orient:vertical;
+				-webkit-line-clamp:5;
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>
+				On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. When you create pictures, charts, or diagrams, they also coordinate with your current document look.
+			</p>
+		</div>
+		<p id='text'>
+			On the Insert tab, the galleries include it  that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. When you create pictures, charts, or diagrams, they also coordinate with your current document look.
+		</p>
+		<!--
+			orient means orientation 
+			horizontal : left to right
+			vertical : top to bottom
+		-->
+	</body>
+</html>

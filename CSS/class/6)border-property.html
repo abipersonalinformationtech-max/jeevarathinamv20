@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Border Properties</title>
+		<style>
+			.design{
+				height:200px;
+				width:200px;
+				border:2px solid red; /* width style color */
+			}
+			.design1{
+				height:200px;
+				width:200px;
+				border-left:2px solid green; /* border-left, border-right, border-top, border-bottom */
+			}
+			.design2{
+				height:100px;
+				width:100px;
+				border-left-width:5px; /* border-width, border-left-width, border-right-width, border-top-width, border-bottom-width ( px, cm, in, mm, % ) */
+				border-color:blue; /* border-color, border-left-color, border-right-color, border-top-color, border-bottom-color ( hex, rgb, namedcolor ) */
+				border-top-style:solid; /* border-left-style, border-right-style, border-top-style, border-bottom-style */
+				
+				/*border-style:outset;*/ /* none, solid, dotted, dashed, double, groove, ridge, inset, outset, hidden */ 
+				/* groove - left and top outside dark, right and bottom inside dark */
+				/* ridge - opposite of groove */
+				/* inset - left and top dark */
+				/* outset - right and bottom dark */
+			}
+			
+			.display{
+				height:200px;
+				width:200px;
+				border:2px solid green;
+				/*border-radius:30px;*/
+				border-top-left-radius:10px;
+				border-top-right-radius:10px;
+				border-bottom-left-radius:5px;
+				border-bottom-right-radius:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='design'>
+		
+		</div>
+		
+		<div class='design1'>
+		
+		</div>
+		
+		<div class='design2'>
+			
+		</div>
+		
+		<div class='display'>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<html>
+	<head>
+		<title>Box Properties</title>
+		<style>
+			/* div - It takes 100% width */
+			.div{
+				background:skyblue;
+			}
+			span{
+				background:yellow;
+			}
+			/*p{
+				background:blue;
+			}*/
+			#box{
+				height:20px; /* px,cm,mm,% */
+				width:20px;
+				background:green;
+			}
+			#box1{
+				height:20px;
+				width:20px;
+				background:blue;
+			}
+			#box2{
+				height:20px;
+				width:20px;
+				background:green;
+			}
+			
+			#box3{
+				height:200px;
+				width:200px;
+				background:green;
+				/*float:left;*/ /* none, left, right */
+				/*margin:50%;*/ /* is apply four side 50px , px,cm,% */
+				/*margin-left:450px;*/ /* margin-left, margin-right, margin-top, margin-bottom */
+				/*margin-top:200px;*/
+				/*padding-left:20px;*/ /* padding-left, padding-right, padding-top, padding-bottom */
+				/*padding-top:20px;*/
+			}
+			.square{
+				height:200px;
+				width:200px;
+				background:red;
+				margin:15px 50px; /* top bottom - 15px, right left - 20px */
+				margin:0px 10px 0px 10px; 
+				padding:15px 50px; /* top bottom - 15px, right left - 20px */
+				margin:5px 10px 15px 10px; /* top,right,bottom,left */
+			}
+			.design{
+				height:auto;
+				width:150px;
+				background:orange;
+				padding:10px 15px;
+				box-sizing:border-box; /* border-box, content-box */
+			}
+			.content{
+				height:50px;
+				width:50px;
+				background:black;
+				float:left;
+			}
+			.para{
+				clear:both; /* left, right, both */
+			}
+		</style>
+	</head>
+	<body>
+		<div class='div'>
+			<!-- Inside div tag we give any tag like p,h1 to h6, img, a etc... -->
+			Welcome to World<br>
+			Welcome to <span>World</span><br>
+			Welcome to World<br>
+			Welcome to World<br>
+		</div>
+		<p>
+			Hello world.. <span class='div1'>Hi hello</span> ram is good
+		</p>
+		
+		<div id='box'>
+			
+		</div>
+		
+		<div id='box1'>
+			
+		</div>
+		
+		<div id='box2'>
+			
+		</div>
+		<div id='box3'>
+			Welcome Ram
+		</div>
+			Welcome Ram
+			
+		<div class='square'>
+			Lorem ipsum content
+		</div>	
+			
+		<div class='design'>
+			On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. 
+		</div><br>
+		
+		<div class='content'></div> <!-- takes width 100% -->
+		<p class='para'>On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks.</p>
+			
+	</body>
+</html>

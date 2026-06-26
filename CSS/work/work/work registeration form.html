@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>registration form</title>
+		<style>
+			body{
+				background:lightblue;
+				position:relative;
+				font-family:arial;
+			}
+			.reg_form{
+				height:420px;
+				width:310px;
+				background:white;
+				padding:10px;
+				border-radius:5px;
+				position:absolute;
+				left:420px;
+				top:15px;
+			}
+			.title{
+				text-align:center;
+			}
+			input{
+				padding:5px 0px;
+				width:100%;
+				border:none;
+				border-radius:3px;
+				border:1px solid gray;
+				margin-bottom:4px;
+			}
+			button{
+				margin-top:10px;
+				background:lightgreen;
+				width:100%;
+				color:white;
+				border:none;
+				border-radius:5px;
+				padding:4px 0px;
+			}
+			.bottom_content{
+				text-align:center;
+			}
+			#footer_text{
+				text-align:center;
+				color:white;
+			}
+			#login{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='reg_form'>
+			<form>
+				<h3 class='title'>Sign Up</h3>
+				<p class='title'>It's free and only takes a minute</p>
+				<div>
+					<label>First Name</label><br>
+					<input type='text' required>
+				</div>
+				<div>
+					<label>Last Name</label><br>
+					<input type='text' required>
+				</div>
+				<div>
+					<label>Email</label><br>
+					<input type='email' required>
+				</div>
+				<div>
+					<label>Password</label><br>
+					<input type='password' required>
+				</div>
+				<div>
+					<label>Conform Password</label><br>
+					<input type='password' required>
+				</div>
+				<div>
+					<button>Submit</button>
+				</div>
+				<div>
+					<p class='bottom_content'>By clicking the sign up button,you agree to our
+					<a href=''>Terms and condition</a> and <a  href=''>Policy Privacy</a>.</p>
+				</div>
+			</form>
+			<p id='footer_text'>Already have an account? <a id='login' href='work login form.html'>Login here</a></p>
+		</div>
+	</body>
+</html>

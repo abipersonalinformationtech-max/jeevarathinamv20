@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Media Query</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<style>
+			/*
+				Media queries are an implementation of responsive web design that allows websites to adapt and display content appropriately on different devices and screen sizes.
+			*/
+			/*
+			/* Mobile Screen */
+			@media (max-width:767px)
+			{
+				body{
+					background:blue;
+				}
+			}
+			/* Tablet Screen */
+			@media (min-width:768px)
+			{
+				body{
+					background:orange;
+				}
+			}
+			/* Desktop Screen */
+			@media (min-width:1024px)
+			{
+				body{
+					background:yellow;
+				}
+			}
+			*/
+			
+			@media (max-width:600px){
+				body{
+					background:green;
+				}
+				input{
+					background:red;
+					border:none;
+				}
+				p{
+					font-size:50px;
+					color:blue;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Media Query</h2>
+		<p>On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks</p>
+		<input type='button' value='Click'>
+	</body>
+</html>

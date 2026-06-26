@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Flex Properties</title>
+		<style>
+			.child{
+				height:100px;
+				width:100px;
+			}
+			.parent{
+				display:flex;
+				/*flex-direction:column-reverse;*/ /* row, row-reverse, column, column-reverse*/
+				/*flex-wrap:wrap-reverse;*/ /* wrap, no-wrap, wrap-reverse */
+				justify-content:center; /*center, space-between, space-around, space-evenly*/ /* horizontal */
+				align-items:baseline; /* stretch, flex-start, flex-end, center, baseline */ /* vertical */
+				height:100%;
+				gap:25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='parent'>
+			<div class='child' style='background:red;'>Apple</div>
+			<div class='child' style='background:green;'>Orange</div>
+			<div class='child' style='background:blue;'>Mango</div>
+			<div class='child' style='background:yellow;'>Papaya</div>			
+		</div>
+	</body>
+</html>

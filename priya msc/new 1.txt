@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Hello</title>
+		<linkrel='stylesheet'hred="{{url_for('static',filename='css/style.css')}}">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

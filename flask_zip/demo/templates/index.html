@@ -1,0 +1,66 @@
+<html>
+	<head>
+	<title>Flask</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-light">
+		  <h1><a class="navbar-brand text-light" href="/about"><img src="{{url_for('static',filename='coffee_icon.jpg')}}" width='50px' height='50px'> Coffee World</a></h1>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item active">
+				<a class="nav-link text-light" href="/index">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link text-light" href="/about">About</a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link text-light" href="/about">Contact</a>
+			  </li>
+			</ul> 
+		  </div>
+		</nav>
+	<!--<div class='img'>
+	<img src="{{url_for('static',filename='coffee-1.jpg')}}" class='mt-5'>
+	</div>-->
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-md-6'>
+				<h1 class='text mt-5' style='font-family:Brush Script MT; color:#fcdf03;'>Relish Coffee House <img src="{{url_for('static',filename='icon.jpg')}}" width='50px' height='50px'> </h1>
+				
+				<div class='btn mb-5' style='margin-top:230px'>
+				<button class='btn btn-info'>Menu</button>
+				<button class='btn btn-info'>Online Order</button>
+				<button class='btn btn-info'>Book a Table</button>
+				</div>
+			</div>
+			<div class='col-md-6'>
+				<!--<img src="{{url_for('static',filename='img1.png')}}" height='100%' width='100%' class='mt-5'>-->
+				<h4 class='jumbotron text-dark' style='margin-top:100px; width:350px; opacity:0.7; font-family:Brush Script MT;float:right;'>Stir and Brew the Fresh Aroma of Coffee <span>:)</span></h4>
+			</div>
+		</div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-md-12'>
+				<h1 class='text-center text-info' style='font-family:Forte;'>About Us</h1>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-md-6'>
+				<div class='about'>
+					<h5 class='jumbotron' style='opacity:0.8'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+					</h5>
+				</div>
+			</div>
+			<div class='col-md-6'>
+			<img src="{{url_for('static',filename='coffee-2.png')}}" width='100%' style='margin-top:40px;' class='img-thumbnail'>
+			</div>
+		</div>
+	</div>
+	<body>
+<html>

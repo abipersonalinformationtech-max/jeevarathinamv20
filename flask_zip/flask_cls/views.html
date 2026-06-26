@@ -1,0 +1,25 @@
+{% extends '_layout.html' %}
+{% block body %}
+	<table class='table table-bordered'>
+		<thead>
+			<tr>
+				<th>Sno</th>
+				<th>Name</th>
+				<th>Mobile</th>
+				<th>Email</th>
+				<th>age</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for row in datas %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row.rname}}</td>
+				<td>{{row.phone}}</td>
+				<td>{{row.email}}</td>
+				<td>{{row.rage}}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

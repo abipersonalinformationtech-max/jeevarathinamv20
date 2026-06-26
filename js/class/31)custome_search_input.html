@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown{
+            display: inline-block;
+            width: 200px;
+            position: relative;
+        }
+        .dropdown input{
+            position: absolute;
+            width: 100%;
+        }
+        .dropdown ul{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            list-style-type: none;
+            border: 2px solid gray;
+        }
+        .dropdown ul li{
+            cursor: pointer;
+            padding: 2px 5px;
+        }
+        .hide{
+            display: none;
+        }
+        .active{
+            background-color: rgb(8, 0, 255);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <input type="text" id="searchInput">
+        <ul class="hide" id="dropdownList">
+        </ul>
+    </div>
+    <script>
+        let products = ["Mobile","Mouse","Keyboard","Monitor","Switch Box","Calculator","Notebook","Printer","Fax Machine"];
+        let searchInput = document.querySelector("#searchInput");
+        let dropdownList = document.querySelector("#dropdownList");
+        let selectedIndex = -1;
+
+        function filterItems(){
+            selectedIndex = -1;
+            dropdownList.classList.remove("hide");
+
+            let query = searchInput.value.toUpperCase();
+
+            let filterItems = products.filter(row => row.toUpperCase().includes(query));
+
+            let li = "";
+            filterItems.forEach((row, index) => {
+                li += `<li onClick='selectRow(${index})'>${row}</li>`;
+            });
+            dropdownList.innerHTML = li;
+        }
+
+        searchInput.addEventListener("input",(ele)=>{
+            filterItems();
+        });
+
+        searchInput.addEventListener("focus",(ele)=>{
+            filterItems();
+        });
+
+        searchInput.addEventListener("keydown",(ele)=>{
+            let rows = document.querySelectorAll("li");
+
+            if(ele.key == "ArrowDown"){
+                if(rows.length > selectedIndex + 1){
+                    selectedIndex++;
+                }
+            }else if(ele.key == "ArrowUp"){
+                if(rows.length > 0){
+                    selectedIndex--;
+                }
+            }else if(ele.key == "Enter"){
+                selectRow(selectedIndex);
+            }
+
+            rows.forEach((row, index) => {
+                if(index == selectedIndex){
+                    row.classList.add("active");
+                }else{
+                    row.classList.remove("active");
+                }
+            });
+
+        });
+
+        function selectRow(index){
+            searchInput.value = products[index];
+            dropdownList.classList.add("hide");
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<script>
+	/*
+		while(condition){
+			statement;
+			increment/decrement;
+		}
+	*/
+	var start = Number(prompt("Enter starting Number :"));
+	var end   = Number(prompt("Enter ending Number :")); 
+	var table = Number(prompt("Enter the table: "));
+	while(start<=end){
+		document.write(table+"x"+start+"="+(table*start)+"<br>"); // 2x1=2
+		++start; // start++; start = start + 1
+	}
+</script>

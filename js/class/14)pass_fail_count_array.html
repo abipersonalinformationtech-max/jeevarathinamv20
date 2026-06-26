@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script>
+			const marks = [50,24,18,77,99,62,35,48,40,80];
+			const passMark = 40; 
+			
+			let passCount = 0;
+			let failCount = 0;
+			
+			for(let mark of marks){
+				if(mark>=passMark){
+					passCount++;
+				}else{
+					failCount++;
+				}
+			}
+			
+			console.log("No of Pass : "+passCount);
+			console.log("No of Fail : "+failCount);
+			
+		</script>
+	</body>
+</html>

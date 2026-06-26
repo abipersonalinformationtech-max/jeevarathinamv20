@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>For Each</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mt-5">
+					<div>
+						<input type="text" class="form-control mb-2 txt">
+						<input type="text" class="form-control mb-2 txt">
+						<input type="text" class="form-control mb-2 txt">
+						<input type="text" class="form-control mb-2 txt">
+						<input type="text" class="form-control mb-2 txt">	
+						<input type="button" class="btn btn-success" value="Submit" onclick="get_total()">					
+					</div>
+					<p id="output"></p>
+				</div>
+			</div>
+		</div>
+		<script>
+			function get_total(){
+				var a = document.querySelectorAll('.txt');
+				var sum = 0;
+				a.forEach(function(ele){
+					//sum = sum + Number(ele.value);
+					sum += Number(ele.value);
+				});
+				document.querySelector("#output").innerText="Total is :"+sum;
+			}
+		</script>
+	</body>
+</html>

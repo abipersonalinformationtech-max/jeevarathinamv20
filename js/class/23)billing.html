@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width:50%;
+            border-collapse: collapse;
+            border:1px solid #ccc;
+        }
+        table td,table th{
+            padding: 5px;
+           border:1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>S.no</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onchange="changeStatus(this,1)"></td>
+            <td>Tea</td>
+            <td id="price1">12</td>
+            <td><input type='number' disabled id="qty1" onkeyup="calulateTotal(1)"></td>
+            <td id="total1"></td>
+        </tr>
+         <tr>
+            <td><input type="checkbox"  onchange="changeStatus(this,2)"></td>
+            <td>Coffee</td>
+            <td id="price2">20</td>
+            <td><input type='number' disabled id="qty2"  onkeyup="calulateTotal(2)"></td>
+            <td id="total2"></td>
+        </tr>
+         <tr>
+            <td><input type="checkbox"  onchange="changeStatus(this,3)"></td>
+            <td>Milk</td>
+            <td id="price3">25</td>
+            <td><input type='number' disabled id="qty3"  onkeyup="calulateTotal(3)"></td>
+            <td id="total3"></td>
+        </tr>
+    </table>
+
+    <script>
+        function changeStatus(ele,num){
+            const chk = ele;
+            const price = document.querySelector("#price"+num);
+            const qty = document.querySelector("#qty"+num);
+            const total = document.querySelector("#total"+num);
+           
+            if(ele.checked){
+                qty.disabled = false;
+               
+            }else{
+                qty.disabled = true;
+                 qty.value = "";
+                total.innerText = "";
+            }
+        }
+
+        function calulateTotal(num){
+            const price = document.querySelector("#price"+num);
+            const qty = document.querySelector("#qty"+num);
+            const total = document.querySelector("#total"+num);
+            total.innerText = Number(price.innerText)* Number(qty.value);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="output"></p>
+
+    <script>
+        let a = [1,2,3,4,5,6,7,8,9,10];
+
+        function odd_number(x){
+            if(x % 2 != 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        let b = a.filter(odd_number);
+
+        document.querySelector("#output").innerHTML = b;
+        
+
+    </script>
+</body>
+</html>

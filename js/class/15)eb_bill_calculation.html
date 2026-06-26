@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class='container'>
+			<div class='row'>
+				<div class='form border col-md-4 mt-4'>
+					<h3>Electricity Bill Calculator</h3><hr>
+					<div>
+						<label>Type</label>
+						<select class='form-control' id='type'>
+							<option value='domestic'>Domestic</option>
+							<option value='commercial'>Commercial</option>
+						</select>
+					</div>
+					<div>
+						<label>From Unit</label>
+						<input type='text' class='form-control' id='from_unit'>
+					</div>
+					<div>
+						<label>To Unit</label>
+						<input type='text' class='form-control' id='to_unit'>
+					</div>
+						<input type='button' value='Calculate' onclick='calculateBill()' class='btn btn-success mt-3 mb-3'>
+						<h4 id='result'></h4>
+				</div>
+			</div>
+		</div>
+		<script>
+			function calculateBill(){
+				var type = document.querySelector('#type').value;
+				var from_unit = Number(document.querySelector('#from_unit').value);
+				var to_unit = Number(document.querySelector('#to_unit').value);
+				
+				if(to_unit<from_unit){
+					document.querySelector('#result').innerText="Please enter valid unit";
+				}
+				
+				var usedUnit = to_unit - from_unit;
+				
+				var bill = 0;
+				
+				if(type==="domestic"){
+					if(usedUnit<=100){
+						bill = usedUnit * 1.5;
+					}else if(usedUnit<=300){
+						bill = usedUnit * 3;
+					}else{
+						bill = usedUnit * 5;
+					}
+				}else if(type==="commercial"){
+					if(usedUnit<=100){
+						bill = usedUnit * 3;
+					}else if(usedUnit<=300){
+						bill = usedUnit * 5;
+					}else{
+						bill = usedUnit * 6;
+					}
+				}
+				
+				
+				document.querySelector('#result').innerText=`Units Used: ${usedUnit} | Total Bill: Rs. ${bill}`;
+			}
+		</script>
+	</body>
+</html>

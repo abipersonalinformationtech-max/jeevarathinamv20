@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gallery_box {
+            width: 500px;
+            display: flex;
+        }
+        #thumbnail{
+            list-style-type: none;
+            padding: 0;
+        }
+        #thumbnail li img{
+            height: 70px;
+            
+        }
+        #full_view{
+            width: 400px;
+            margin-top: 15px;
+        }
+        .active{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery_box">
+        <ul id="thumbnail">
+            <li><img src='products/1.jpg' class='active' onclick="changeImage(this)"></li>
+            <li><img src='products/2.jpg' onclick="changeImage(this)"></li>
+            <li><img src='products/3.jpg' onclick="changeImage(this)"></li>
+            <li><img src='products/4.jpg' onclick="changeImage(this)"></li>
+        </ul>
+        <div >
+            <img src="products/1.jpg" alt="" id="full_view">
+        </div>
+    </div>
+    <script>
+        function changeImage(ele){
+            
+            var imgs = document.querySelectorAll("#thumbnail li img");
+            imgs.forEach(img=>{
+                img.classList.remove("active");
+            });
+
+            ele.classList.add("active");
+            document.querySelector("#full_view").src = ele.src;
+        }
+    </script>
+</body>
+
+</html>

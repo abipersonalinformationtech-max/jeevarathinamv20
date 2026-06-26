@@ -1,0 +1,41 @@
+<html>
+	<head></head>
+	<body>
+		<div>
+			<input type='text' id='txt'>
+			<input type='button' value='Click' onclick='demo()'>
+			<p id='output'></p>
+		</div>
+		<script>
+			/*
+				document
+				window
+				location
+				
+				Selector : id,class,tag
+				id = document.getElementById("num");
+				class = document.getElementsByClassName("num");
+				tag = document.getElementsByTagName("p");
+				
+				id,class,tag
+					document.querySelector("#num");
+					document.querySelector(".num");
+					document.querySelector("p");
+				class,tag
+					document.querySelectorAll(".num");
+					document.querySelectorAll("p");
+				
+				innerHTML
+				innerText
+				value
+				
+			*/
+			
+			function demo(){
+				var txt = document.getElementById("txt").value;
+				document.getElementById("output").innerHTML=txt;
+			}
+			
+		</script>
+	</body>
+</html>

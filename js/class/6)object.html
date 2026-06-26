@@ -1,0 +1,22 @@
+<script>
+	var student = {
+		name:"Ram", //left property:right value
+		m1:55,
+		m2:75,
+		m3:15,
+		total:function(){
+			return this.m1+this.m2+this.m3;
+		},
+		result:function(){
+			if(this.m1>=35&&this.m2>=35&&this.m3>=35){
+				return "Pass";
+			}else{
+				return "Fail";
+			}
+		}
+	};	
+	
+	console.log(student.name);
+	console.log(student.total());
+	console.log(student.result());
+</script>

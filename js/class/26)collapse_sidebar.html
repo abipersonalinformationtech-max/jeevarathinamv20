@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        html,body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .sidebar{
+            position: relative;
+            top: 0px;
+            height: 100%;
+            width: 200px;
+            box-shadow: 2px 2px 3px 2px #ccc;
+            box-sizing: border-box;
+            padding: 20px 30px;
+            background-color: white;
+        }
+        .sidebar .menu a{
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+        }
+        .close-icon{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 2px 2px;
+            color: blue;
+        }
+        .open-icon{
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 2px 5px;
+            box-shadow: 1px 1px 1px 1px #ccc;
+        }
+        .hide{
+            transition: left 0.8s linear;
+            left: -210px;
+        }
+        .show{
+            transition: left 0.8s linear;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <a class='open-icon' onclick="showSidebar(event)" href="">&#8594;</a>
+    <div class="sidebar show">
+        <a class='close-icon' onclick="hideSidebar(event)" href="">&times;</a>
+        <div class="menu">
+            <a href="">Home</a>
+            <a href="">Shop</a>
+            <a href="">About Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Contact Us</a>
+        </div>
+    </div>
+    <script>
+        function hideSidebar(e){
+            e.preventDefault();
+
+            let sidebar = document.querySelector(".sidebar");
+            sidebar.classList.remove("show");
+            sidebar.classList.add("hide");
+        }
+
+        function showSidebar(e){
+            e.preventDefault();
+
+            let sidebar = document.querySelector(".sidebar");
+            sidebar.classList.remove("hide");
+            sidebar.classList.add("show");
+        }
+    </script>
+</body>
+</html>

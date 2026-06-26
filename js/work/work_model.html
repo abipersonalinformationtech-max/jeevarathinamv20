@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>design</title>
+    <style>
+        .header{
+           width: 100%;
+           height: 100vh; 
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        .btn{
+            background-color: rgb(195, 251, 135);
+            border-radius: 5px;
+        }
+        .login{
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            box-shadow: 2px 2px 2px 3px #ccc;
+            display: none;
+        }
+        .close{
+            background-color: rgb(224, 123, 123);
+            border-radius: 5px;
+        }
+        .save{
+            background-color: rgb(225, 225, 134);
+            border-radius: 5px  ;
+        }
+        .txt{
+            border-radius: 5px;
+        }
+        .pwd{
+            border-radius: 5px  ;
+        }
+    </style>
+</head>
+<body class="header">
+    <input type="button" class="btn" value="Open" onclick="openModal()">
+    <div class="login">
+        <form>
+            <div>
+                <label class="nme">Name</label><br>
+                <input type="text" class="txt" required><br><br>
+                <label>Password</label><br>
+                <input type="password" class="pwd" required><br><br>
+                <input type="button" class="save"; value="Save">
+                <input type="button" class="close" value="Close" onclick="closeModal()">
+            </div>
+        </form>
+    </div>
+    <script>
+        function openModal(){
+            document.querySelector(".login").style.display="flex";
+        }
+        function closeModal(){
+            document.querySelector(".login").style.display="";
+        }
+    </script>
+</body>
+</html>

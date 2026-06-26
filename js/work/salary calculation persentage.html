@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>salary persentage</title>
+	</head>
+	<body>
+		<script>
+			var salary = Number(prompt("Enter salary :"));
+			var allowence = Number(prompt("Enter allowence"));
+			var deduction = Number(prompt("Enter deduction"));
+			
+			var allow = (allowence / 100) * salary;
+			var ded = (deduction / 100) * salary;
+			
+			var total = salary + allow - ded;
+			console.log("Total Amount : "+total);
+		</script>
+	</body>
+</html>

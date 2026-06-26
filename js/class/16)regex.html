@@ -1,0 +1,51 @@
+<script>
+	/*const mobile = "12345 67890";
+	const pattern = /[0-9]{5} [0-9]{5}/;
+	
+	const email = "ram@gmail.com";
+	const emailPattern = /^[A-Za-z0-9]{3,}@[a-z]{3,}.[a-z]{2,}$/;
+	
+	
+	console.log(pattern.test(mobile));
+	console.log(mobile.match(pattern));
+	
+	console.log(emailPattern.test(email));
+	console.log(email.match(emailPattern));*/
+	
+	/*
+		upper - 2
+		lower - 2
+		num - 2
+		spl - 2
+	*/
+	
+	const pwd = "Ram%@154Fsdf";
+	
+	const upperPattern = /[A-Z]/g;
+	const upperResult = pwd.match(upperPattern);
+	
+	const lowerPattern = /[a-z]/g;
+	const lowerResult = pwd.match(lowerPattern);
+	
+	const numPattern = /[0-9]/g;
+	const numResult = pwd.match(numPattern);
+	
+	const splPattern = /[^A-Za-z0-9]/g;
+	const splResult = pwd.match(splPattern);
+	
+	if(pwd.length<8){
+		console.log("Password atleast minimum 8 Characters");
+	}else if(upperResult.length<2){
+		console.log("Upper Case atleast 2 characters");
+	}else if(lowerResult.length<2){
+		console.log("Lower Case atleast 2 characters");
+	}else if(numResult.length<2){
+		console.log("Number atleast 2 characters");
+	}else if(splResult.length<2){
+		console.log("Special Characters atleast 2 characters");
+	}else{
+		console.log("ok");
+	}
+	
+	
+</script>

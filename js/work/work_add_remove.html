@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Work_add_remove</title>
+		<style>
+			.menu{
+				margin-top:10px;
+				padding:5px;
+				width:100px;
+				border:1px solid grey;
+			}
+			a{
+				display:block;
+				margin-bottom:2px;
+				text-decoration:none;
+			}
+			.hide{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type='button' value='show' onclick='menu(this)'>
+		<div class='menu hide'>
+			<a href='#'>home</a><br>
+			<a href='#'>shop</a><br>
+			<a href='#'>about us</a><br>
+			<a href='#'>contact us</a>
+		</div>
+		<script>
+			function menu(ele){
+				var cls = document.querySelector(".menu");
+				if(cls.classList.contains('hide')){
+					cls.classList.remove('hide');
+					ele.value='Hide';
+				}else{
+					cls.classList.add('hide');
+					ele.value='show';
+				}
+			}
+		</script>
+	</body>
+</html>

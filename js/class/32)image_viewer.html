@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <style>
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content { 
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        #img-viewer {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+        }
+        
+        #img-viewer .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #img-viewer .close:hover{
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+        
+        .img-container{
+            position:relative;
+            width:300px;
+        }
+        .img-source{
+            border:5px solid #ccc;
+            border-radius:5px;
+            width: 100%;
+        }
+        .expand-icon{
+            position:absolute; 
+            right:10px; 
+            top:15px; 
+            cursor:pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="img-viewer">
+        <span class="close" onclick="close_modal()">&times;</span>
+        <img class="modal-content" id="full-image" >
+    </div>
+    <div class="img-container">
+        <img src="sample.jpg" class="img-source">
+        <img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYEAYAAACw5+G7AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAABgAAAAYADwa0LPAAAAB3RJTUUH5gcBDC8iyDNppwAAAURJREFUWMPtmLFSAjEURY+U9jDwJfyIpY2FLa2lv2HnL1jaysIMDFRQ8AeW2ug4sci1YJfBYdd9gSysw94mszNJ3r152ZebIO8eYDKRnAPJ0A4gSYgMyd3DeGzmkfJuccEN9PsBsb5Aii0AeAfvzb0z3sUKvy9htZI+X6DXq4Dwn5CXh3Zbcq+wWBTxzBPwBsvlzrf/uIZOp3ri6ziFPEoFFCmvOCOGuFfQ7ZYKCJgwihAr8U3/HAEDSBLJ3cJwGJzSPbfWvvOW8T1kpUwZCV3x6ChcOe+eYDYrHS/3DPP5qYrErpCUuDWlmy2QjTs28QYNGqyxVY2yqmJyqZK7g9HoZD/xvy2jsQ6g6BZl6yKRuwVqaCV+8z3AzEU58kMzEsNOV+JVrELO4EJzbHcYmhGzgLq/SqRtC/EI02lArHq8SqS8fwCukS3bLvmYtAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wNy0wMVQxMjo0NzozNCswMDowMBMMqp4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDctMDFUMTI6NDc6MzQrMDA6MDBiURIiAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIyLTA3LTAxVDEyOjQ3OjM0KzAwOjAwNUQz/QAAAABJRU5ErkJggg=="  class='expand-icon' onclick="full_view(this);" >
+    </div>
+    <script>
+        function full_view(ele){
+            let src = ele.parentElement.querySelector(".img-source").getAttribute("src");
+            document.querySelector("#img-viewer").querySelector("img").setAttribute("src",src);
+            document.querySelector("#img-viewer").style.display="block";
+        }
+        function close_modal(){
+            document.querySelector("#img-viewer").style.display="";
+        }
+    </script>
+</body>
+</html>

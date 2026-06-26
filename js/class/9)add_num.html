@@ -1,0 +1,20 @@
+<html>
+	<head></head>
+	<body>
+		<div>
+			<p id='num1'>10</p>
+			<p id='num2'>20</p>
+			<input type='button' value='Click' onclick='demo()'>
+			<p id='output'></p>
+		</div>
+		<script>
+			function demo(){
+				var a = Number(document.getElementById("num1").innerText);
+				var b = Number(document.getElementById("num2").innerText);
+				var c = a+b;
+				document.getElementById("output").innerText=c;
+			}
+			
+		</script>
+	</body>
+</html>

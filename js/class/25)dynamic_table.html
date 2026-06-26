@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Sno</th>
+                                <th>Product</th>
+                                <th>Qty</th>
+                                <th>Rate</th>
+                                <th>Add</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <td class="sno">1</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="button" class="btn btn-success" onclick="add_row()" value="Add"></td>
+                                <td><input type="button" class="btn btn-danger" onclick="remove_row(this)" value="Remove"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+            function add_row(){
+                var sno = document.querySelectorAll('.sno').length;
+                sno++;
+                var tr = document.createElement("tr");
+                tr.innerHTML='<td class="sno">'+sno+'</td> <td><input type="text" class="form-control"></td> <td><input type="text" class="form-control"></td> <td><input type="text" class="form-control"></td> <td><input type="button" class="btn btn-success" onclick="add_row()" value="Add"></td> <td><input type="button" class="btn btn-danger" onclick="remove_row(this)" value="Remove"></td>';
+                document.querySelector("#tbody").appendChild(tr);
+            }
+            function remove_row(e){
+                var n = document.querySelector("#tbody").querySelectorAll("tr").length;
+                if(n>1 && confirm("Are you sure ?")){
+                    var ele = e.parentNode.parentNode;
+                    ele.remove();
+                    serial_no();
+                }
+            }
+            function serial_no(){
+                var cls = document.querySelectorAll(".sno");
+                for(var i=0; i<cls.length;i++){
+                    cls[i].innerHTML=i+1;
+                }
+            }
+        </script>
+    </body>
+</html>

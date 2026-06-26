@@ -1,0 +1,218 @@
+<html>
+	<head>
+		<title>Array_Function</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<style>
+			.c:hover,
+			.c:focus {
+			transform: scale3d(1.006, 1.006, 1);
+			box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+		  }
+		
+		</style>
+	</head>
+	<body>
+		<div class='container-fluid'>
+			<div class='row'>
+				<div class='col-md-6' style='overflow:scroll;height:1000px;'>
+					<div class='input-icons'>
+					<input type='text' placeholder='Search..' class='form-control mt-5' value=''>
+					<!--<i class="fa fa-search icon" aria-hidden="true"></i>-->
+					</div>
+					<div id='out' class='row'>
+					
+					</div>
+				</div>
+				<div class='col-md-6 mt-5' style=''>
+					<table class='table'>
+						<thead class='table-dark'>
+							<tr>
+								<td>Product Name</td>
+								<td>Qty</td>
+								<td>Price</td>
+								<td>Amount</td>
+								<td>Remove</td>
+							</tr>
+						</thead>
+						<tbody class='tbl'>
+						
+						</tbody>
+						<tfoot>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Total</td>
+								<td id='tot'>0.00</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Gst</td>
+								<td id='gst'>0.00</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Net Amount</td>
+								<td id='na'>0.00</td>
+							</tr>
+							<tr class='bill'>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><input type='button' value='Print Bill' class='btn btn-success btn-lg' onclick='show()'></td>
+							</tr>
+						</tfoot>
+					</table>
+					<div id='o' class=''>
+						<table class='table'>
+							<thead class='bg-primary text-light'>
+								<tr>
+									<th>sno</th>
+									<th>Product</th>
+									<th>QTY</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody class='billItems'>
+							
+							</tbody>
+							<tfoot>
+								<tr>
+									<td></td>
+									<td></td>
+									<td>Total</td>
+									<td id='amt'>0.00</td>
+								</tr>
+							</tfoot>
+						</table>
+						<h1 class='text-center text-danger'>Thank You!</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script>
+		let billItems = [];
+		
+		function r_total(e){
+			var qu=Number(e.value);
+			var pr=Number(e.parentElement.parentElement.querySelector(".rprice").innerText);
+			
+			var tot=qu*pr;
+			e.parentElement.parentElement.querySelector(".rtotal").innerText=tot;
+			calc_tot();
+		}
+		function add_row(ele,e){
+			e.preventDefault();
+			let pname=ele.parentElement.parentElement.querySelector(".ctitle").innerText;
+			let quentity=ele.parentElement.parentElement.querySelector(".quentity").innerText;
+			let price=ele.parentElement.parentElement.querySelector(".price").innerText;
+			let total=price;
+		
+			let row=document.querySelector(".tbl").querySelectorAll("tr");
+			
+			var addstatus=false;
+			
+			for(i=0; i<row.length; i++){
+				var tds=row[i].querySelectorAll("td");
+				if(tds[0].innerText == pname){
+					addstatus=true;
+					var qty=Number(row[i].querySelector(".qty").value)+1;
+					row[i].querySelector(".qty").value = qty;
+					var pri=Number(tds[2].innerText);
+					var tot=qty*pri;
+					tds[3].innerText = tot;
+				}
+			}
+			
+			if(addstatus == false)
+			{
+			var tr=document.createElement("tr");
+			tr.innerHTML="<td>"+pname+"</td><td><input type='number' value='1' style='width:50px'  onchange='r_total(this)' class='qty'>"+"</td><td class='rprice'>"+price+"</td><td class='rtotal'>"+total+"</td>"+"<td><input type='button' value='Remove'  onclick='remove_row(this,event)' class='btn btn-primary'>"+"</td>";
+			document.querySelector(".tbl").appendChild(tr);
+			}
+			calc_tot();
+		}
+		function remove_row(ele,e){
+			alert("Are You Sure!")
+			ele.parentNode.parentNode.remove();
+			calc_tot();
+			serial_no();
+		}
+		function calc_tot(){
+			let add=document.getElementsByClassName("rtotal");
+			let sum=0;
+			for(i=0; i<add.length; i++){
+				sum+=Number(add[i].innerText);
+			}
+			document.getElementById("tot").innerText=sum;
+			
+			gst = sum * 0.18;
+			var a = Math.round(gst*100)/100;
+			net= sum + a;
+			document.getElementById("tot").innerText=sum;
+			document.getElementById("gst").innerText=a;
+			document.getElementById("na").innerText=net;
+		}
+		function printBill(){
+			console.log(billItems);
+		}
+		function bill_table(){
+			var tableItems=document.getElementById("billItems");
+			tableItems.innerHTML="";
+			
+			var total=0;
+			
+			for(var i=0; i<billItems.length; i++){
+				var item = billItems[i];
+				var pname = item[0];
+				var quentity=item[1];
+				var price=item[2];
+				
+				var row=document.createElement("tr");
+				
+				var pnameCell=document.createElement("td");
+				pnameCell.innerText=pname;
+				row.appendChild(pnameCell); 
+				
+				var qtyCell=document.createElement("td");
+				qtyCell.innerText=quentity;
+				row.appendChild(qtyCell);
+				
+				var priceCell=document.createElement("td");
+				priceCell.innerText=price;
+				row.appendChild(priceCell);
+				
+				tableItems.appendChild(row);
+				
+				total +=quentity*price;
+			}
+		}
+		
+		var a=[
+		["img/product-1.jpg","Apple","1kg",200],
+		["img/product-2.jpg","Orange","1kg",180],
+		["img/product-3.jpg","Mango","1kg",140],
+		["img/product-4.jpg","Guava","1kg",100],
+		["img/product-5.jpg","Pine Apple","1kg",150],
+		["img/product-6.jpg","Pomegranate","1kg",80],
+		["img/product-7.jpg","Grapes","1kg",50],
+		["img/product-8.jpg","Kiwi","1kg",180],
+		["img/product-9.jpg","Muskmelon","1kg",40],
+		["img/product-10.jpg","Dragon Fruit","1kg",300],
+		["img/product-11.jpg","SoapApple","1kg",60],
+		["img/product-12.jpg","Banana","1kg",30],
+		["img/product-13.jpg","Strawberry","1kg",90],
+		["img/product-14.jpg","Blueberry","1kg",120],
+		];
+		
+		var card="";
+		
+		a.forEach(function(v,i){
+			card+="<div class='col-md-4 MT-4'>"+"<div class='card c'>"+"<div class='card-body'>"+"<img src="+v[0]+" width='100%' height='195px'>"+"<h3 class='ctitle'>"+v[1]+"</h3>"+"<h5 class='quentity'>"+v[2]+"</h5>"+"<p class='price'>"+v[3]+"</p>"+"<span style='float:right;'><input type='button' value='Add' onclick='add_row(this,event)' class='btn btn-primary'></span>"+"</div>"+"</div>"+"</div>";
+		});
+		document.getElementById("out").innerHTML=card;
+	</script>
+	</body>
+</html>

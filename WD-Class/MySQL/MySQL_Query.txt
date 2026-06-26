@@ -1,0 +1,16 @@
+MySQL:
+Create table:
+	CREATE TABLE `db_college`.`tbl_staff` (`stid` INT NOT NULL AUTO_INCREMENT ,
+	`stname` VARCHAR(50) NOT NULL , `year` INT(50) NOT NULL , `did` INT(50) NOT NULL , 
+	RIMARY KEY (`stid`)) ENGINE = InnoDB;
+	
+Insert data into Department table:
+	INSERT INTO tbl_department(dname) VALUES('Marketing');
+	INSERT INTO tbl_staff(stname, year, did) VALUES('Priya', 3, 2);
+
+	INSERT INTO tbl_emp(ename, age, salary, mobile, email, did, department) 
+	VALUES('Thara', 32, 10000, 123456789, 'thara@gmail.com', 2, 'Marketing');
+	
+Update data into employee table:
+	UPDATE tbl_emp set department='Accounts' WHERE eid=1;
+	UPDATE tbl_emp set mobile=1023456789 WHERE eid=5;

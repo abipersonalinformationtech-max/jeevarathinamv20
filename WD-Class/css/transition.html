@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Transform Property</title>
+		<style>
+			div.a{
+				height:200px;
+				width:100px;
+				background:green;
+				transition:width 1s;
+				transition-property:width;
+				transition-duration:3s;
+				color:white;
+				transition-timing-function:linear;
+			}
+			div.b{
+				height:200px;
+				width:100px;
+				background:green;
+				transition:width 1s;
+				color:white;
+				margin-top:10px;
+				transition-timing-function:ease;
+			}
+			div.c{
+				height:200px;
+				width:100px;
+				color:white;
+				background:green;
+				transition:width 1s;
+				margin-top:10px;
+				transition-timing-function:ease-in;
+			}
+			div.d{
+				height:200px;
+				width:100px;
+				color:white;
+				background:green;
+				margin-top:10px;
+				transition:width,height 1s;
+				transition-timing-function:ease-out;
+			}
+			div.e{
+				height:200px;
+				width:100px;
+				color:white;
+				background:green;
+				margin-top:10px;
+				transition:width 4s;
+				transition-timing-function:ease-in-out;
+			}
+			div:hover{
+				width:800px;
+				
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class='a'>linear
+		</div>
+		<div class='b'>ease
+		</div>
+		<div class='c'>ease-in
+		</div>
+		<div class='d'>ease-out
+		</div>
+		<div class='e'>ease-in-out
+		</div>
+	</body>
+</html>

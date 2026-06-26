@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include "header.html" %}
+</head>
+
+<body>
+    {% include "navbar2.html" %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                   <h2 class="mt-5 text-center">View Task</h2>
+                        <hr>
+                        {% for row in product %}  
+                        <div class="col-md-5">
+                            <div class="card mt-5">
+                                <div class="card-body">
+                                    <h3 class="card-title">Task : {{ row.pid }}</h3>
+                                    <p class="" >{{ row.pname }}</p>
+                                    <p class="" text_color="green"> {{ row.Thumbnail }}</p>
+                                    <p text color="red">Price:{{ row.price }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {% endfor %}
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+</body>
+
+</html>
+ 

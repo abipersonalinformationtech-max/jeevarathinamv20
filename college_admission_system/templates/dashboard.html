@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Total Students</h5>
+                <p class="card-text display-4">{{ total_students }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Allocated</h5>
+                <p class="card-text display-4">{{ allocated_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-warning text-dark mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Waiting List</h5>
+                <p class="card-text display-4">{{ waiting_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-info text-white mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Gender Ratio</h5>
+                <p class="card-text">Boys: {{ boys_count }} | Girls: {{ girls_count }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Category-wise Student Registration</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cat in category_counts %}
+                        <tr>
+                            <td>{{ cat.category }}</td>
+                            <td>{{ cat.count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Seat Utilization Report</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Total Seats</th>
+                            <th>Allocated</th>
+                            <th>Available</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in seat_utilization %}
+                        <tr>
+                            <td>{{ item.category_name }}</td>
+                            <td>{{ item.seat_count }}</td>
+                            <td>{{ item.used_seats }}</td>
+                            <td>
+                                <span class="badge {{ 'bg-success' if item.seat_count - item.used_seats > 0 else 'bg-danger' }}">
+                                    {{ item.seat_count - item.used_seats }}
+                                </span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

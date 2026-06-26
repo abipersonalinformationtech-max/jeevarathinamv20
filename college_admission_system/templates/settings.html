@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Seat Category Settings</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    Note: Total seats for MCA should sum up to 30 as per requirements, but you can adjust them here.
+                </div>
+                <form method="POST">
+                    {% for item in settings %}
+                    <div class="mb-3 row">
+                        <label class="col-sm-4 col-form-label">{{ item.category_name }} Seats</label>
+                        <div class="col-sm-8">
+                            <input type="number" name="{{ item.category_name }}" class="form-control" value="{{ item.seat_count }}" required min="0">
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Save Settings</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

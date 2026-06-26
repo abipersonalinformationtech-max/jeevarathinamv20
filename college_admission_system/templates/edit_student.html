@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Edit Student</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Student ID</label>
+                        <input type="text" name="student_id" class="form-control" value="{{ student.student_id }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="name" class="form-control" value="{{ student.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <select name="gender" class="form-select" required>
+                            <option value="Male" {{ 'selected' if student.gender == 'Male' }}>Male</option>
+                            <option value="Female" {{ 'selected' if student.gender == 'Female' }}>Female</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select name="category" class="form-select" required>
+                            <option value="OC" {{ 'selected' if student.category == 'OC' }}>OC</option>
+                            <option value="BC" {{ 'selected' if student.category == 'BC' }}>BC</option>
+                            <option value="MBC" {{ 'selected' if student.category == 'MBC' }}>MBC</option>
+                            <option value="SC" {{ 'selected' if student.category == 'SC' }}>SC</option>
+                            <option value="PC" {{ 'selected' if student.category == 'PC' }}>PC/PwD</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Marks</label>
+                        <input type="number" step="0.01" name="mark" class="form-control" value="{{ student.mark }}" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Update Student</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
